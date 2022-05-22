@@ -174,7 +174,7 @@ func export_flags(p []Property) error {
                 "*",
         }
 
-        arch := []string { "IA32", "X64", "AARCH64" }
+        arch := []string { "IA32", "X64", "AARCH64", "*" }
 
         cnt := 0
         fl, _ := filter(p, tmp)
@@ -187,7 +187,7 @@ func export_flags(p []Property) error {
                         tmp.Command = c
                         r, fl = filter(fl, tmp)
                         cnt += len(r)
-                        print_props(r, true, &out)
+                        print_props(r, false, &out)
                 }
         }
 
